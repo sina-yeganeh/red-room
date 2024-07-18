@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://8lhlywjqt1"]
+
+[ext_resource type="Texture2D" uid="uid://c1rt312mxn0ew" path="res://assets/sprites/knife.png" id="1_lgmcp"]
+[ext_resource type="Script" path="res://scripts/knife.gd" id="1_naccj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_si6nh"]
+size = Vector2(4, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bp3da"]
+size = Vector2(5, 16)
+
+[node name="Knife" type="StaticBody2D"]
+script = ExtResource("1_naccj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2)
+shape = SubResource("RectangleShape2D_si6nh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lgmcp")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_bp3da")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
