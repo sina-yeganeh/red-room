@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://tq578quo8nc5"]
+[gd_scene load_steps=12 format=3 uid="uid://tq578quo8nc5"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_74h62"]
 [ext_resource type="Texture2D" uid="uid://bxiwpcdu8md23" path="res://assets/sprites/tilemap.png" id="1_tk6ia"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cdhq8l1wo400f" path="res://assets/sprites/bulb.png" id="3_74rpu"]
 [ext_resource type="Texture2D" uid="uid://3su7sh4nxcnd" path="res://assets/sprites/light.png" id="4_d4rb2"]
 [ext_resource type="PackedScene" uid="uid://8lhlywjqt1" path="res://scenes/knife.tscn" id="6_wmcln"]
-[ext_resource type="Texture2D" uid="uid://c1rt312mxn0ew" path="res://assets/sprites/knife.png" id="7_vg0cl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vu8bo"]
 texture = ExtResource("1_tk6ia")
@@ -388,10 +387,6 @@ sources/0 = SubResource("TileSetAtlasSource_8noqr")
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_p35s7"]
 polygon = PackedVector2Array(-30, -2, -25, -12, -20, -2, -25, -19)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ftr4j"]
-radius = 2.0
-height = 15.0
-
 [node name="Main" type="Node2D"]
 script = ExtResource("1_74h62")
 
@@ -456,25 +451,3 @@ color = Color(0.39, 0.39, 0.3471, 1)
 [node name="Knife" parent="Knifes" instance=ExtResource("6_wmcln")]
 position = Vector2(-56, -73)
 collision_layer = 2
-
-[node name="RigidBody2D2" type="RigidBody2D" parent="."]
-position = Vector2(-49, -33)
-rotation = 0.592254
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
-position = Vector2(-1, -0.5)
-shape = SubResource("CapsuleShape2D_ftr4j")
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2"]
-texture = ExtResource("7_vg0cl")
-
-[node name="RigidBody2D3" type="RigidBody2D" parent="."]
-position = Vector2(-51, -17)
-rotation = -1.0463
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
-position = Vector2(-1, -0.5)
-shape = SubResource("CapsuleShape2D_ftr4j")
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D3"]
-texture = ExtResource("7_vg0cl")
